@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pierre papier ciseaux 1,2,3</title>
+</head>
+<body>
+<script type="text/javascript">
+
+var choixUtilisateur = prompt("Choisissez-vous pierre, papier,ciseaux,puit,lezard,spock ?");
+var choixOrdi = Math.random();
+if (choixOrdi < 0.34) {
+choixOrdi = "pierre";
+} else if(choixOrdi <= 0.67) {
+choixOrdi = "papier";
+} else if (choixOrdi <= 0.76){
+choixOrdi = "puit";
+} else if(choixOrdi <= 0.86) {
+choixOrdi = "lezard";
+} else if(choixOrdi <= 0.96){
+  choixOrdi ="spock";
+  } else {
+choixOrdi = "ciseaux";
+};
+var comparer = function(choix1,choix2)
+{
+if(choix1 == choix2) {
+alert("Egalité");
+}
+else if
+(choix1 == "pierre")
+{ if(choix2 == "ciseaux")
+{
+  alert("La pierre casse les ciseaux !");
+}
+else {
+  alert ("La papier enveloppe la pierre !");
+}
+}
+else if
+(choix1 == "papier")
+{ if(choix2 == "pierre")
+{
+  alert ("Le papier enveloppe la pierre");
+}
+else {
+   alert ("Les ciseaux coupent le papier !");
+ }
+ }
+else if
+(choix1 == "ciseaux")
+{ if(choix2 =="papier")
+{
+  alert ("Les ciseaux coupent le papier !");
+}
+else {
+  alert ("La pierre casse les ciseaux !");
+  }
+  }
+  else if (choix1=="puit") {
+    if (choix2=="papier") {
+    alert ("Le papier enveloppe le puit");
+  } else {
+    alert ("Le puit tout le monde perd");
+  }
+  }
+  else if (choix1=="lezard") {
+    if (choix2=="spock") {
+    alert ("Le lezard empoisonne spock");
+  } else {
+    alert ("Spock écrase le lezard !");
+    }
+    }
+    else if (choix1=="spock") {
+      if (choix2=="ciseaux") {
+      alert ("Le lezard empoisonne spock");
+    } else {
+      alert ("Spock ecrabouille les ciseaux !");
+    }
+    }
+  else {
+  choixUtilisateur = prompt("Choisissez pierre, papier,ciseaux,puit,lezard,spock et rien d'autre, sinon vous sortez du jeu");
+  return comparer(choixUtilisateur,choixOrdi);
+  }
+  };
+
+  comparer(choixUtilisateur,choixOrdi);
+
+  </script>
+  </body>
+  </html>

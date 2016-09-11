@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Boucles</title>
+</head>
+<body>
+<script type="text/javascript">
+
+// pyramide diese
+var compteur = 0;
+var sortie = '';
+while( compteur < 10 ){
+    sortie += '#';
+    console.log(sortie);
+    compteur++;
+}
+
+// pyramide chiffres
+var compteur2 = 0;
+var sortie2 = '';
+while( compteur2 < 10 ){
+    compteur2++;
+    sortie2 += compteur2;
+    console.log(sortie2);
+}
+
+// pyramide lettre
+var lettres = 'abcdefghijklmnopqrstuvwxyz';
+var compteur3 = 0;
+var sortie3 = '';
+while(compteur3<lettres.length){
+    sortie3 += lettres[compteur3];
+    console.log(sortie3);
+    compteur3++;
+}
+
+</script>
+</body>
+</html>

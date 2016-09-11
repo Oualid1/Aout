@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Seconds To Minutes</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+
+        function tafonction(){
+
+
+          if (n > 3600) {
+              h = Math.floor(n / 3600);
+              m = Math.floor((n / 60) % 60);
+              s = n % 60;
+              return h + "h " + m + "m " + s + "s";
+          } else {
+              m = Math.floor((n / 60) % 60);
+              s = n % 60;
+              return m + "m " + s + "s";
+          }
+      } else {
+          s = n
+          return s + "s";
+        // traitement
+        setTimeout(tafonction,2000); /* rappel après 2 secondes = 2000 millisecondes */
+        }
+
+        tafonction();
+
+        </script>
+    </body>
+</html>

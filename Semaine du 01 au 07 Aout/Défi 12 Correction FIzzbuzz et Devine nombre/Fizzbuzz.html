@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz</title>
+</head>
+<body>
+<script type="text/javascript">
+
+// pour tous les nombres entre 0 et 100
+for(i=0;i<=100; i++){
+  // si le reste de la division du nombre par 5 est égale à 0 (cf modulo %) ET que le reste de la division du nombre par 7 est égale à 0
+  if(i%5===0 && i%7===0){
+    console.log("fizzbuzz");
+  }
+  // sinon si le reste de la division du nombre par 5 est égale à 0
+  else if(i%5===0){
+    console.log("fizz");
+  }
+    // sinon si le reste de la division du nombre par 7 est égale à 0
+  else if(i%7===0){
+    console.log("buzz");
+  }
+  else{ // sinon on écrit le nombre
+    console.log(i);
+  }
+}
+
+</script>
+</body>
+</html>

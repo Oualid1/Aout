@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Capitales</title>
+
+    <script>
+        function afficheQuestion(){
+            paysHasard = tirageAleatoire(listePays);
+            nombreErreurs = 0;
+            reponse = prompt('quelle est la capitale du ' + paysHasard.pays + ' ? ');
+            verifieReponse( paysHasard, reponse );
+        }
+        // renvoie un element aleatoire d'une liste
+        function tirageAleatoire( liste ){
+            var hasard = Math.ceil(Math.random() * (liste.length-1));
+            return liste[hasard];
+        }
+        function verifieReponse( paysEnCours , reponseUtilisateur ){
+            if( reponseUtilisateur.toLowerCase() == paysEnCours.capitale.toLowerCase() ){
+                // retrouver l'index du pays
+                var indexPaysEnCours = listePays.indexOf(paysEnCours);
+                listePays.splice(indexPaysEnCours ,1);
+                console.log("nombre de pays restant ", listePays.length);
+
+                if( listePays.length > 0)
+                    afficheQuestion();
+                else
+                    alert('Bravo');
+            } else {
+                // si faux nouvelle tentative ( 3 max ) » puis PERDU!
+                nombreErreurs += 1;
+                if( nombreErreurs < nombreErreursMax){
+                    reponse = prompt('quelle est la capitale du ' + paysEnCours.pays + ' ? ');
+                    verifieReponse(paysEnCours, reponse);
+                }
+                else
+                    alert('perdu');
+            }
+        }
+        var listePays = [
+            {pays: 'France', capitale: 'Paris'},
+            {pays: 'Espagne', capitale: 'Madrid'},
+            {pays: 'Italie', capitale: 'Rome'},
+            {pays: 'Belgique', capitale: 'Bruxelles'}
+        ];
+        var nombreErreursMax = 3;
+        var nombreErreurs;
+        // ---------------
+        afficheQuestion();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

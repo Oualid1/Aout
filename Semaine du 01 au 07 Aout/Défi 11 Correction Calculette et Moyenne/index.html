@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+//noprotect
+var notes=[];
+var somme=0;
+function moyenne(){
+  while (notes.length < 4){
+    var val =prompt(" entrez les notes entre 0 et 20");
+    val = Number(val);
+    if(val >= 0 && val <= 20){
+      notes.push(val);
+      console.log("Notes saisies :" + notes);
+      console.log("Nombres de notes "+(notes.length));
+    }else{
+      console.log("La note doit etre compris entre 0 et 20!!!!!!!!!!");
+    }
+  }
+
+    for(var i=0; i < notes.length; i++){
+  somme = somme + notes[i];
+  console.log(i + " " + somme + " " + notes[i]);
+}
+ console.log("moyenne :" + " " + somme/notes.length);
+}
+
+moyenne();
+</script>
+
+
+
+<script id="jsbin-source-javascript" type="text/javascript">//noprotect
+var notes=[];
+var somme=0;
+function moyenne(){
+  while (notes.length < 4){
+    var val =prompt(" entrez les notes entre 0 et 20");
+    val = Number(val);
+    if(val >= 0 && val <= 20){
+      notes.push(val);
+      console.log("Notes saisies :" + notes);
+      console.log("Nombres de notes "+(notes.length));
+    }else{
+      console.log("La note doit etre compris entre 0 et 20!!!!!!!!!!");
+    }
+  }
+
+    for(var i=0; i < notes.length; i++){
+  somme = somme + notes[i];
+  console.log(i + " " + somme + " " + notes[i]);
+}
+ console.log("moyenne :" + " " + somme/notes.length);
+}
+
+moyenne();
+</script></body>
+</html>
